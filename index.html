@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commission Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+</head>
+<body>
+<script src="javascript.js"></script>
+<span>
+    <form action="sales_page.html" target="_blank" method="GET">
+        <br id="spacer">
+            <fieldset>
+                <legend>Commission Calculator</legend>
+                <span id="formcontent">
+                Hours Worked:
+                    <input type="number" name="hoursworked" step="0.25" min="0.25" autocomplete="off" placeholder="e.g. 8 hours"required><br>
+                Length of Lunch (in minutes):
+                    <input type="number" name="lunchlength" step="1" min="1" disabled="disabled" id="lunchlength" autocomplete="off" placeholder="e.g. 30 minutes"required><br>
+                Lunch Taken?
+                <input type="checkbox" name="lunched" onchange="toggleTextBox()"><br>
+                Sales Information:
+                    <input type="text" name="sales" autocomplete="off" required><br><br>
+                <input type="submit" id="submit" value="➟" >
+                </span>
+            </fieldset>
+    </form>
+</span>
+</body>
+</html>
