@@ -27,7 +27,9 @@ function lineBuilder(rawSales){
         let description = currentLine.slice(0, currentLine.indexOf("$"));
         console.log(description);
         console.log(currentLine);
-
+        description = description.slice(0, description.lastIndexOf(" "));
+        description = description.slice(0, description.lastIndexOf(" "));
+        console.log(description);
 
 
 
