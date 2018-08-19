@@ -34,6 +34,12 @@ function lineBuilder(rawSales){
         console.log(currentLine);
         let quantity = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(quantity);
+        currentLine = currentLine.replace(quantity + " ", "");
+        let price = currentLine.slice(0, currentLine.indexOf(" "));
+        price = currentLine.slice(0, currentLine.indexOf(" "));
+        currentLine = currentLine.replace(price + " ", "");
+        console.log(currentLine);
+        console.log(price);
 
 
 
