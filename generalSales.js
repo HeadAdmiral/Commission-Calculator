@@ -33,7 +33,8 @@ function lineBuilder(rawSales){
         currentLine = currentLine.replace(description + " ", "");
         console.log(currentLine);
         let quantity = currentLine.slice(0, currentLine.indexOf(" "));
-        
+        console.log(quantity);
+
 
 
 
