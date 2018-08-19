@@ -33,6 +33,6 @@ function lineBuilder(rawSales){
 function printme(){
     //let salesInfo = document.getElementsByName("sales")[0];
     console.log(document.getElementsByName("sales"));
-    console.log(document.getElementsByName("sales")[0]);
+    console.log(document.getElementsByName("sales")[0].value);
 //lineBuilder(document.getElementsByName("sales")[0].innerText);
 }
