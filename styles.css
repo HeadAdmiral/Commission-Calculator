@@ -30,7 +30,7 @@ legend {
     text-shadow: 0 1px 1px #115eaf;
 }
 
-input {
+input, button {
     background-color: inherit;
     border: none;
     border-bottom: 0.1em solid #ffffff;
