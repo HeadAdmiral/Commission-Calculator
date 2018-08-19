@@ -11,17 +11,17 @@ function lineBuilder(rawSales){
 
         let transactionType = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(transactionType);
-        currentLine = currentLine.replace(transactionType, "");
+        currentLine = currentLine.replace(transactionType + " ", "");
         console.log(currentLine);
 
         let lineNumber = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(lineNumber);
-        currentLine = currentLine.replace(lineNumber, "");
+        currentLine = currentLine.replace(lineNumber + " ", "");
         console.log(currentLine);
 
         let SKU = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(SKU);
-        currentLine = currentLine.replace(SKU, "");
+        currentLine = currentLine.replace(SKU + " ", "");
         console.log(currentLine);
 
         let description = currentLine.slice(0, currentLine.indexOf("$"));
