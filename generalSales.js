@@ -29,3 +29,5 @@ function lineBuilder(rawSales){
         console.log(description);
     // }
 }
+
+lineBuilder(document.getElementsByName("sales")[0].innerText);
