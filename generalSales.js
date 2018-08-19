@@ -30,7 +30,9 @@ function lineBuilder(rawSales){
     // }
 }
 
-//let salesInfo = document.getElementsByName("sales")[0];
-console.log(document.getElementsByName("sales"));
-console.log(document.getElementsByName("sales")[0]);
+function printme(){
+    //let salesInfo = document.getElementsByName("sales")[0];
+    console.log(document.getElementsByName("sales"));
+    console.log(document.getElementsByName("sales")[0]);
 //lineBuilder(document.getElementsByName("sales")[0].innerText);
+}
