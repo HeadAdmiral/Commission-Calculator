@@ -30,6 +30,10 @@ function lineBuilder(rawSales){
         description = description.slice(0, description.lastIndexOf(" "));
         description = description.slice(0, description.lastIndexOf(" "));
         console.log(description);
+        currentLine = currentLine.replace(description + " ", "");
+        console.log(currentLine);
+        let quantity = currentLine.slice(0, currentLine.indexOf(" "));
+        
 
 
 
