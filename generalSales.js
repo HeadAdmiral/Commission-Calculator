@@ -30,4 +30,7 @@ function lineBuilder(rawSales){
     // }
 }
 
-lineBuilder(document.getElementsByName("sales")[0].innerText);
+//let salesInfo = document.getElementsByName("sales")[0];
+console.log(document.getElementsByName("sales"));
+console.log(document.getElementsByName("sales")[0]);
+//lineBuilder(document.getElementsByName("sales")[0].innerText);
