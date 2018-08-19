@@ -6,7 +6,7 @@ function lineBuilder(rawSales){
         console.log(currentLine);
         let transactionID = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(transactionID);
-        currentLine = currentLine.replace(transactionID, "");
+        currentLine = currentLine.replace(transactionID + " ", "");
         console.log(currentLine);
 
         let transactionType = currentLine.slice(0, currentLine.indexOf(" "));
