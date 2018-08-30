@@ -80,7 +80,7 @@ function calculateCommission(lineItem){
     const COMMISSION_UNDER_HUNDRED = 0.03; // 3%
     const COMMISSION_OVER_HUNDRED = 0.015; // 1.5%
     
-    if (lineItem.price)
+    //if (lineItem.price)
 }
 
 
