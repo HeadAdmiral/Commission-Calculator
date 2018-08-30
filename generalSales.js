@@ -69,9 +69,9 @@ function lineBuilder(rawSales){
             price: Number(price)
         };
         
-        lines.push(line);
+        lineItems.push(line);
      }
-    return lines;
+    return lineItems;
 }
 
 function calculateCommission(lineItem){
