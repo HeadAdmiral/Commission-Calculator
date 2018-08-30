@@ -55,10 +55,9 @@ function lineBuilder(rawSales){
         //        PRICE
         // ==================    
         let price = currentLine.slice(0, currentLine.indexOf(" ")); // $9.99
-        console.log(price);
-        price = price.replace("/([()])//g", ""); // ($29.99) ---> 29.99j
-        console.log(price);
-        console.log("=====");
+        price = price.replace("(", "");
+        price = price.replace("$", "");
+        price = price.replace(")", "");
         currentLine = currentLine.replace(price + " ", "");
         currentLine = currentLine.replace(price + " ", "");
         
