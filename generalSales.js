@@ -85,6 +85,6 @@ function calculateCommission(lineItem){
 
 function printme(){
     salesData = document.getElementsByName("sales")[0].value;
-    let lineItems = lineBuilder(salesInfo);
+    let lineItems = lineBuilder(salesData);
     
 }
