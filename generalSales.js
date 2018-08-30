@@ -1,12 +1,12 @@
 function isLastElement(parentElement){
-    return (parentElement.indexOf(" ") != -1)
+    return (!(parentElement.indexOf(" ") != -1))
 }
 
 function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
     let counter = 0;
-    while (isLastElement(currentLine)){
+    while (!(isLastElement(currentLine))){
         //console.log(currentLine);
         let transactionID = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(transactionID);
@@ -46,12 +46,14 @@ function lineBuilder(rawSales){
         console.log(price);
         console.log("==========");
         console.log(currentLine);
-        console.log(currentLine.length);
         console.log("==========");
         counter++;
+        
+        let line = {transactionID: transactionID};
+        console.log(line.transactionID);
+        console.log("==========");
      }
-    console.log("Done!");
-    //let line = {
+
         
 }
 
