@@ -45,6 +45,7 @@ function lineBuilder(rawSales){
         console.log("==========");
         counter++;
      }
+    console.log("Done!");
     //let line = {
         
 }
