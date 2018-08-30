@@ -1,5 +1,19 @@
 let salesData;
 
+function formatPrice(price) {
+    if (price.indexOf("(") != -1){
+        price = price.replace("(", "");
+        price = price.replace("$", "-");
+        price = price.replace(")", "");
+    }
+
+    else{
+        price = price.replace("$", "");
+    }
+    
+    return price;
+}
+
 function isLastElement(parentElement){
     return (!(parentElement.indexOf(" ") != -1))
 }
@@ -57,9 +71,7 @@ function lineBuilder(rawSales){
         let price = currentLine.slice(0, currentLine.indexOf(" ")); // $9.99
         currentLine = currentLine.replace(price + " ", "");
         currentLine = currentLine.replace(price + " ", "");
-        price = price.replace("(", "");
-        price = price.replace("$", "");
-        price = price.replace(")", "");
+        price = formatPrice(price);
         
         let line = {
             transactionID: transactionID,
