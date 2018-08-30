@@ -1,5 +1,5 @@
 function lineBuilder(rawSales){
-    rawSales = rawSales.split("45-");
+    rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
     console.log(currentLine);
     let counter = 0;
