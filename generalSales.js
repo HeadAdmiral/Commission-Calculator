@@ -2,7 +2,7 @@ function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
     let counter = 0;
-     while (counter < 10){
+    while (counter < 20){
         //console.log(currentLine);
         let transactionID = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(transactionID);
@@ -43,6 +43,8 @@ function lineBuilder(rawSales){
         console.log("==========");
         counter++;
      }
+    //let line = {
+        
 }
 
 let salesInfo;
