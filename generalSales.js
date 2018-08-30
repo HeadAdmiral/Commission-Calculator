@@ -52,7 +52,7 @@ function lineBuilder(rawSales){
         //        PRICE
         // ==================    
         let price = currentLine.slice(0, currentLine.indexOf(" ")); // $9.99
-        price = currentLine.slice(0, currentLine.indexOf(" ")); //
+        //price = currentLine.slice(0, currentLine.indexOf(" ")); //
         currentLine = currentLine.replace(price + " ", "");
         currentLine = currentLine.replace(price + " ", "");
         
