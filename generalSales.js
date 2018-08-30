@@ -42,6 +42,7 @@ function lineBuilder(rawSales){
         console.log(price);
         console.log("==========");
         console.log(currentLine);
+        console.log(currentLine.length);
         console.log("==========");
         counter++;
      }
