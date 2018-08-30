@@ -1,3 +1,5 @@
+let salesData;
+
 function isLastElement(parentElement){
     return (!(parentElement.indexOf(" ") != -1))
 }
@@ -5,7 +7,7 @@ function isLastElement(parentElement){
 function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
-    let lines = [];
+    let lineItems = [];
     while (!(isLastElement(currentLine))){
         
         // Where the information for the current line is:
@@ -53,7 +55,7 @@ function lineBuilder(rawSales){
         //        PRICE
         // ==================    
         let price = currentLine.slice(0, currentLine.indexOf(" ")); // $9.99
-        //price = currentLine.slice(0, currentLine.indexOf(" ")); //
+        price = price.replace(/([()])//g); // ($29.99) ---> 29.99j
         currentLine = currentLine.replace(price + " ", "");
         currentLine = currentLine.replace(price + " ", "");
         
@@ -66,23 +68,24 @@ function lineBuilder(rawSales){
             quantity: quantity,
             price: price
         };
-//         console.log(line.transactionID);
-//         console.log(line.transactionType);
-//         console.log(line.lineNumber);
-//         console.log(line.sku);
-//         console.log(line.desc);
-//         console.log(line.quantity);
-//         console.log(line.price);
-//         console.log("==========");
         
         lines.push(line);
      }
     return lines;
 }
 
-let salesInfo;
+function calculateCommission(lineItem){
+    const COMMISSION_OUT_OF_DEPARTMENT = 0.0075; // 0.75%
+    const COMMISSION_UNDER_TEN = 0.06; // 6%
+    const COMMISSION_UNDER_HUNDRED = 0.03; // 3%
+    const COMMISSION_OVER_HUNDRED = 0.015; // 1.5%
+    
+    if (lineItem.price)
+}
+
+
 function printme(){
-    salesInfo = document.getElementsByName("sales")[0].value
-    let lines = lineBuilder(salesInfo);
-    console.log(lines);
+    salesData = document.getElementsByName("sales")[0].value;
+    let lineItems = lineBuilder(salesInfo);
+    
 }
