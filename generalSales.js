@@ -1,6 +1,7 @@
 function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
+    console.log(currentLine);
     let counter = 0;
     while (counter < 20){
         //console.log(currentLine);
