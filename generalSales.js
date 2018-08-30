@@ -39,6 +39,7 @@ function lineBuilder(rawSales){
         currentLine = currentLine.replace(price + " ", "");
         //console.log(currentLine);
         console.log(price);
+        break;
      }
 }
 
