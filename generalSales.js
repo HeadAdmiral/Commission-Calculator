@@ -6,7 +6,7 @@ function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
     let counter = 0;
-    while (!(isLastElement(currentLine))){
+    while (isLastElement(currentLine)){
         //console.log(currentLine);
         let transactionID = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(transactionID);
