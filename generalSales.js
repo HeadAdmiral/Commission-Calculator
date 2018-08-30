@@ -5,6 +5,7 @@ function isLastElement(parentElement){
 function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
+    let lines = [];
     while (!(isLastElement(currentLine))){
         
         // Where the information for the current line is:
@@ -65,19 +66,23 @@ function lineBuilder(rawSales){
             quantity: quantity,
             price: price
         };
-        console.log(line.transactionID);
-        console.log(line.transactionType);
-        console.log(line.lineNumber);
-        console.log(line.sku);
-        console.log(line.desc);
-        console.log(line.quantity);
-        console.log(line.price);
-        console.log("==========");
+//         console.log(line.transactionID);
+//         console.log(line.transactionType);
+//         console.log(line.lineNumber);
+//         console.log(line.sku);
+//         console.log(line.desc);
+//         console.log(line.quantity);
+//         console.log(line.price);
+//         console.log("==========");
+        
+        lines.push(line);
      }
+    return lines;
 }
 
 let salesInfo;
 function printme(){
     salesInfo = document.getElementsByName("sales")[0].value
-    lineBuilder(salesInfo);
+    let lines = lineBuilder(salesInfo);
+    console.log(lines);
 }
