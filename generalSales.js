@@ -93,7 +93,22 @@ function calculateCommission(lineItem){
     const COMMISSION_UNDER_TEN = 0.06; // 6%
     const COMMISSION_UNDER_HUNDRED = 0.03; // 3%
     const COMMISSION_OVER_HUNDRED = 0.015; // 1.5%
+    let commission;
     
+    // If not a service plan
+    // If not a TV
+    
+    // Maybe make a method that determines what kind of item the lineItem is, and then go from there in this method.
+    if (lineItem.price > 0 && lineItem.price <= 9.99) {
+        commission = lineItem.price * COMMISSION_UNDER_TEN;
+    }
+    else if (lineItem.price > 9.99 && lineItem.price <= 99.99) {
+        commission = lineItem.price * COMMISSION_UNDER_HUNDRED;
+    }
+    else if (lineItem.price > 99.99) {
+        commission = lineItem.price * COMMISSION_OVER_HUNDRED;
+    }
+
 } 
 
 
