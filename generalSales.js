@@ -62,11 +62,11 @@ function lineBuilder(rawSales){
         let line = {
             transactionID: transactionID,
             transactionType: transactionType,
-            lineNumber: lineNumber,
+            lineNumber: Number(lineNumber),
             sku: SKU,
             desc: description,
-            quantity: quantity,
-            price: price
+            quantity: Number(quantity),
+            price: Number(price)
         };
         
         lines.push(line);
@@ -80,7 +80,6 @@ function calculateCommission(lineItem){
     const COMMISSION_UNDER_HUNDRED = 0.03; // 3%
     const COMMISSION_OVER_HUNDRED = 0.015; // 1.5%
     
-    //if (lineItem.price)
 }
 
 
