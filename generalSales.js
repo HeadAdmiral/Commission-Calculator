@@ -1,8 +1,12 @@
+function isLastElement(parentElement){
+    return (parentElement.indexOf(" ") != -1)
+}
+
 function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
     let counter = 0;
-    while (counter < 40){
+    while (!(isLastElement(currentLine))){
         //console.log(currentLine);
         let transactionID = currentLine.slice(0, currentLine.indexOf(" "));
         console.log(transactionID);
