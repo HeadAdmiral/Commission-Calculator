@@ -1,7 +1,6 @@
 function lineBuilder(rawSales){
     rawSales = rawSales.split(/\r?\n/);
     let currentLine = rawSales[0];
-    console.log(currentLine);
     let counter = 0;
     while (counter < 20){
         //console.log(currentLine);
@@ -41,6 +40,8 @@ function lineBuilder(rawSales){
         currentLine = currentLine.replace(price + " ", "");
         //console.log(currentLine);
         console.log(price);
+        console.log("==========");
+        console.log(currentLine);
         console.log("==========");
         counter++;
      }
