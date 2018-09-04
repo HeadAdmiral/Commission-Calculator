@@ -13,7 +13,7 @@ function formatPrice(price) {
         price = price.replace("$", "");
     }
     
-    return price;
+    return price.toFixed(2);
 }
 
 function isLastElement(parentElement){
