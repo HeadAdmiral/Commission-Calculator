@@ -1,12 +1,14 @@
 let salesData;
 
 function formatPrice(price) {
+    // If price is negative, change from ($29.99) to -29.99
     if (price.indexOf("(") != -1){
         price = price.replace("(", "");
         price = price.replace("$", "-");
         price = price.replace(")", "");
     }
 
+    // If price is positive, change from $29.99 to 29.99
     else{
         price = price.replace("$", "");
     }
@@ -15,6 +17,7 @@ function formatPrice(price) {
 }
 
 function isLastElement(parentElement){
+    // Returns true if parentElement does not contain spaces (ie. there are no elements after the current one)
     return (!(parentElement.indexOf(" ") != -1))
 }
 
@@ -69,8 +72,8 @@ function lineBuilder(rawSales){
         //        PRICE
         // ==================    
         let price = currentLine.slice(0, currentLine.indexOf(" ")); // $9.99
-        currentLine = currentLine.replace(price + " ", "");
-        currentLine = currentLine.replace(price + " ", "");
+        currentLine = currentLine.replace(price + " ", ""); // This line is repeated to remove the leading & trailing spaces
+        currentLine = currentLine.replace(price + " ", ""); // and also to get rid of the duplicate price
         price = formatPrice(price);
         
         let line = {
@@ -111,10 +114,16 @@ function calculateCommission(lineItem){
 
 } 
 
+function getItemsUnderTen(lineItems) {
+    for (let i = 0; i < lineItems.length; i++){
+        console.log(lineItems[i].price);
+    }
+}
+
 
 function printme(){
     salesData = document.getElementsByName("sales")[0].value;
     let lineItems = lineBuilder(salesData);
     console.log(lineItems);
-    
+    let itemsUnderTen = getItemsUnderTen(lineItems)
 }
