@@ -6,14 +6,16 @@ function formatPrice(price) {
         price = price.replace("(", "");
         price = price.replace("$", "-");
         price = price.replace(")", "");
+        price = price.toFixed(2);
     }
 
     // If price is positive, change from $29.99 to 29.99
     else{
         price = price.replace("$", "");
+        price = price.toFixed(2);
     }
     
-    return price.toFixed(2);
+    return price;
 }
 
 function isLastElement(parentElement){
