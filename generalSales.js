@@ -116,7 +116,10 @@ function calculateCommission(lineItem){
 
 function getItemsUnderTen(lineItems) {
     for (let i = 0; i < lineItems.length; i++){
-        console.log(lineItems[i].price);
+        let currentItem = lineItems[i].price
+        if (currentItem > 0 && currentItem <= 9.99) {
+            console.log(lineItems[i].price);
+        }
     }
 }
 
