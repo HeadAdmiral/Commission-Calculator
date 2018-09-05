@@ -143,6 +143,8 @@ h3 {
     box-shadow: 0 6px #17954c;
     float: right;
     position: relative;
+    bottom: 5px;
+    right: 10px;
 }
 
 #details:hover {
@@ -157,4 +159,8 @@ h3 {
 
 #details:focus {
     outline:0;
+}
+
+#commission-content {
+    padding-left: 15px;
 }
