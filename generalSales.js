@@ -457,10 +457,10 @@ function processSales(){
         console.log(toDollars(totalEarnedWages) + " / " + hoursWorked + "hr(s) worked = " + hourlyWage + "/hr");
     }
 
-    toggleOutput();
+    toggleOutput(hourlyWage);
 }
 
-function toggleOutput() {
+function toggleOutput(hourlyWage) {
     let input = document.getElementById("form-content");
     let output = document.getElementById("output");
     let hourlyWage = document.getElementById("commission");
