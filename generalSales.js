@@ -1,8 +1,10 @@
 window.onload = function(){
   form = document.getElementById("form");
 	
+  console.log("Edited form default submit action");	
   $("form").submit(function (e) {  
     e.preventDefault();
+    console.log("Processing sales...");
     processSales();
   });	
 }
