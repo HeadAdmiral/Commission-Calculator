@@ -463,8 +463,10 @@ function processSales(){
 function toggleOutput() {
     let input = document.getElementById("form-content");
     let output = document.getElementById("output");
+    let hourlyWage = document.getElementById("commission");
     
     input.style.display = "none";
+    hourlyWage.innerText = '$' + hourlyWage;
     output.style.display = "block";
     document.body.style.backgroundColor = "#24b662";
 }
