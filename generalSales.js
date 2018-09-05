@@ -456,4 +456,15 @@ function processSales(){
                     " = " + toDollars(totalEarnedWages));
         console.log(toDollars(totalEarnedWages) + " / " + hoursWorked + "hr(s) worked = " + hourlyWage + "/hr");
     }
+
+    toggleOutput();
+}
+
+function toggleOutput() {
+    let input = document.getElementById("form-content");
+    let output = document.getElementById("output");
+    
+    input.style.display = none;
+    output.style.display = block;
+    document.body.style.backgroundColor = "#24b662";
 }
