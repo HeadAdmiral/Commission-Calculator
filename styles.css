@@ -130,9 +130,32 @@ h3 {
     display: none;   
 }
 
-.details {
-    background: #20a156 !important;
-    box-shadow: 0 6px #17954c !important;
-    padding: 0.75rem 1rem !important;
-    font-size: 1.25rem !important;
+#details {
+    content: "\e00d";
+    border: none;
+    font-family: inherit;
+    font-size: 1.25rem;
+    color: inherit;
+    background: #20a156;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    margin: 0px -5px;
+    border-radius: 15px;
+    box-shadow: 0 6px #17954c;
+    float: right;
+    position: relative;
+}
+
+#details:hover {
+    box-shadow: 0 5px #17954c;
+    top: 1px;
+}
+
+#details:active {
+    box-shadow: 0 4px #17954c;
+    top: 2px;
+}
+
+#details:focus {
+    outline:0;
 }
