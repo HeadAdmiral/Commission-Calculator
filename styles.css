@@ -94,23 +94,22 @@ br {
     background: #24b662;
 }
 
-#header, #commission {
-    font-family: 'Lato';
-    color: #ffffff;
-    text-shadow: 0 1px 1px #115eaf;
-}
-
 #commission {
     font-family: 'Roboto Condensed';
     margin: 0 auto;
     color: #ffffff;
-    text-shadow: 0 1px 1px #115eaf;
+    text-shadow: 0 1px 1px #17954c;
     display: inline;
 }
 
 #calculated {
     border: 0.075em solid white;
     box-shadow: 0 6px #17954c;
+    
+    button {
+        background: #20a156;
+        box-shadow: 0 6px #17954c;
+    }
 }
 
 .bounce {
