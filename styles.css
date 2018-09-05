@@ -150,6 +150,7 @@ h3 {
 #details:hover {
     box-shadow: 0 5px #17954c;
     top: 1px;
+    bottom: -5px;
 }
 
 #details:active {
