@@ -1,3 +1,12 @@
+window.onload = function(){
+  form = document.getElementById("form");
+	
+  $("form").submit(function (e) {  
+    e.preventDefault();
+    processSales();
+  });	
+}
+
 function formatPrice(price) {
     // If price is negative, change from ($29.99) to -29.99
     if (price.indexOf("(") !== -1){
@@ -307,7 +316,7 @@ function adjustHoursWorked(hoursWorked, lunchLength){
     return hoursWorked;
 }
 
-function printme(){
+function processSales(){
     let salesData = document.getElementsByName("sales")[0].value;
     let hoursWorked = document.getElementsByName("hoursworked")[0].value;
     let lunchLength = document.getElementsByName("lunchlength")[0].value;
