@@ -464,7 +464,7 @@ function toggleOutput() {
     let input = document.getElementById("form-content");
     let output = document.getElementById("output");
     
-    input.style.display = none;
-    output.style.display = block;
+    input.style.display = "none";
+    output.style.display = "block";
     document.body.style.backgroundColor = "#24b662";
 }
