@@ -130,3 +130,8 @@ h3 {
     font-family: 'Roboto Condensed';
     display: inline;
 }
+
+
+#output {
+    display: none;   
+}
