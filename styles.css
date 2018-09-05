@@ -143,14 +143,12 @@ h3 {
     box-shadow: 0 6px #17954c;
     float: right;
     position: relative;
-    bottom: 5px;
     right: 10px;
 }
 
 #details:hover {
     box-shadow: 0 5px #17954c;
     top: 1px;
-    bottom: -5px;
 }
 
 #details:active {
