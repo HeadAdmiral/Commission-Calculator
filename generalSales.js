@@ -466,7 +466,7 @@ function toggleOutput(hourlyWage) {
     let commission = document.getElementById("commission");
     
     input.style.display = "none";
-    commission.innerText = '$' + hourlyWage;
+    commission.innerText = hourlyWage;
     output.style.display = "block";
     document.body.style.backgroundColor = "#24b662";
 }
