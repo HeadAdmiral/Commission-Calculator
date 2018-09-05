@@ -6,11 +6,11 @@ When a user inputs sales information from Sales Lookup, the following happens:
 
   1. Each transaction is turned into an object, with the same properties that each line in Sales Lookup has.
   2. The calculator then goes through each transaction and calculates the commission of each item based on its price.
-  ⋅⋅⋅$9.99 and under: 6%⋅⋅
-  ⋅⋅⋅$99.99 and under: 3%⋅⋅
-  ⋅⋅⋅$100.00 and up: 1.5%⋅⋅
-  ⋅⋅⋅Service plans: 10%⋅⋅
-  ⋅⋅⋅Items not in department: 0.75%⋅⋅
+  ⋅⋅⋅$9.99 and under: 6%
+  ⋅⋅⋅$99.99 and under: 3%
+  ⋅⋅⋅$100.00 and up: 1.5%
+  ⋅⋅⋅Service plans: 10%
+  ⋅⋅⋅Items not in department: 0.75%
 
   3. Earned commission is then grouped into categories (items under $10, items under $100, items over $100).
   4. Statistics about the user's sales (such as percentage of sales in each commission category) are then calculated.
