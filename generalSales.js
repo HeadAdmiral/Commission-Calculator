@@ -40,7 +40,7 @@ function lineBuilder(rawSales){
         // ==================
         //   TRANSACTION ID
         // ==================       
-        let transactionID = currentLine.slice(0, currentLine.indexOf(" ")); // 45-PO-6934344
+        let transactionID = currentLine.slice(0, currentLine.indexOf("\t")); // 45-PO-6934344
         currentLine = currentLine.replace(transactionID + " ", ""); // Sale 5 480772 CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
 
         // ==================
