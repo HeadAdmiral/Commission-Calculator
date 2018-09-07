@@ -80,7 +80,7 @@ function lineBuilder(rawSales){
         // ==================    
         let price = currentLine.slice(0, currentLine.indexOf("\t")); // $9.99
         currentLine = currentLine.replace(price + "\t", ""); // This line is repeated to remove the leading & trailing spaces
-        currentLine = currentLine.replace(price + "\t", ""); // and also to get rid of the duplicate price
+        //currentLine = currentLine.replace(price + "\t", ""); // and also to get rid of the duplicate price
         price = formatPrice(price);
         
         let line = {
