@@ -82,8 +82,8 @@ function lineBuilder(rawSales){
         currentLine = currentLine.replace(itemPrice + "\t", ""); // This line is repeated to remove the leading & trailing spaces
 	let transactionPrice = currentLine.slice(0, currentLine.indexOf("\t"));
         currentLine = currentLine.replace(transactionPrice + "\t", "");
-        price = formatPrice(price);
-	transactionPrice = formatPrice(price);
+        itemPrice = formatPrice(itemPrice);
+	transactionPrice = formatPrice(transactionPrice);
         
         let line = {
             transactionID: transactionID,
