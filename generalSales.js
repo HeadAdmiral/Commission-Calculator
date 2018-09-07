@@ -41,25 +41,25 @@ function lineBuilder(rawSales){
         //   TRANSACTION ID
         // ==================       
         let transactionID = currentLine.slice(0, currentLine.indexOf("\t")); // 45-PO-6934344
-        currentLine = currentLine.replace(transactionID + " ", ""); // Sale 5 480772 CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
+        currentLine = currentLine.replace(transactionID + "\t", ""); // Sale 5 480772 CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
 
         // ==================
         //  TRANSACTION TYPE
         // ==================    
-        let transactionType = currentLine.slice(0, currentLine.indexOf(" ")); // Sale
-        currentLine = currentLine.replace(transactionType + " ", ""); // 5 480772 CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
+        let transactionType = currentLine.slice(0, currentLine.indexOf("\t")); // Sale
+        currentLine = currentLine.replace(transactionType + "\t", ""); // 5 480772 CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
 
         // ==================
         //     LINE NUMBER
         // ==================    
-        let lineNumber = currentLine.slice(0, currentLine.indexOf(" ")); // 5
-        currentLine = currentLine.replace(lineNumber + " ", ""); // 480772 CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
+        let lineNumber = currentLine.slice(0, currentLine.indexOf("\t")); // 5
+        currentLine = currentLine.replace(lineNumber + "\t", ""); // 480772 CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
         
         // ==================
         //        SKU
         // ==================      
-        let SKU = currentLine.slice(0, currentLine.indexOf(" ")); // 480772
-        currentLine = currentLine.replace(SKU + " ", ""); // CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
+        let SKU = currentLine.slice(0, currentLine.indexOf("\t")); // 480772
+        currentLine = currentLine.replace(SKU + "\t", ""); // CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99 $9.99
 
         // ==================
         //    DESCRIPTION
