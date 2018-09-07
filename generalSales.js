@@ -65,22 +65,22 @@ function lineBuilder(rawSales){
         //    DESCRIPTION
         // ==================    
         let description = currentLine.slice(0, currentLine.indexOf("$")); // CAT 5e Snagless Network Cable 10 ft. - Green 1 $9.99
-        description = description.slice(0, description.lastIndexOf(" ")); // CAT 5e Snagless Network Cable 10 ft. - Green 1
-        description = description.slice(0, description.lastIndexOf(" ")); // CAT 5e Snagless Network Cable 10 ft. - Green
-        currentLine = currentLine.replace(description + " ", ""); // 1 $9.99 $9.99
+        description = description.slice(0, description.lastIndexOf("\t")); // CAT 5e Snagless Network Cable 10 ft. - Green 1
+        description = description.slice(0, description.lastIndexOf("\t")); // CAT 5e Snagless Network Cable 10 ft. - Green
+        currentLine = currentLine.replace(description + "\t", ""); // 1 $9.99 $9.99
 
         // ==================
         //      QUANTITY
         // ==================    
-        let quantity = currentLine.slice(0, currentLine.indexOf(" ")); // 1
-        currentLine = currentLine.replace(quantity + " ", ""); // $9.99 $9.99
+        let quantity = currentLine.slice(0, currentLine.indexOf("\t")); // 1
+        currentLine = currentLine.replace(quantity + "\t", ""); // $9.99 $9.99
         
         // ==================
         //        PRICE
         // ==================    
-        let price = currentLine.slice(0, currentLine.indexOf(" ")); // $9.99
-        currentLine = currentLine.replace(price + " ", ""); // This line is repeated to remove the leading & trailing spaces
-        currentLine = currentLine.replace(price + " ", ""); // and also to get rid of the duplicate price
+        let price = currentLine.slice(0, currentLine.indexOf("\t")); // $9.99
+        currentLine = currentLine.replace(price + "\t", ""); // This line is repeated to remove the leading & trailing spaces
+        currentLine = currentLine.replace(price + "\t", ""); // and also to get rid of the duplicate price
         price = formatPrice(price);
         
         let line = {
