@@ -212,7 +212,7 @@ function getReturns(lineItems){
         if (isReturn(lineItems[i])) {
             returns.push(lineItems[i]);
         }
-    }
+    } 
 
     return returns;
 
