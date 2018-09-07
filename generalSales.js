@@ -78,10 +78,12 @@ function lineBuilder(rawSales){
         // ==================
         //        PRICE
         // ==================    
-        let price = currentLine.slice(0, currentLine.indexOf("\t")); // $9.99
+        let itemPrice = currentLine.slice(0, currentLine.indexOf("\t")); // $9.99
         currentLine = currentLine.replace(price + "\t", ""); // This line is repeated to remove the leading & trailing spaces
-        //currentLine = currentLine.replace(price + "\t", ""); // and also to get rid of the duplicate price
+	let transactionPrice = currentLine.slice(0, currentLine.indexOf("\t"));
+        currentLine = currentLine.replace(transactionPrice + "\t", "");
         price = formatPrice(price);
+	transactionPrice = formatPrice(price);
         
         let line = {
             transactionID: transactionID,
@@ -90,7 +92,8 @@ function lineBuilder(rawSales){
             sku: SKU,
             desc: description,
             quantity: Number(quantity),
-            price: Number(price)
+            price: Number(itemPrice),
+	    total: Number(transactionPrice)
         };
         
         lineItems.push(line);
