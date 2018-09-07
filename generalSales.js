@@ -79,12 +79,13 @@ function lineBuilder(rawSales){
         //        PRICE
         // ==================    
         let itemPrice = currentLine.slice(0, currentLine.indexOf("\t")); // $9.99
-	console.log(currentLine);
         currentLine = currentLine.replace(itemPrice + "\t", ""); // This line is repeated to remove the leading & trailing spaces
-	console.log(currentLine);
+	    
+        // ==================
+        //        TOTAL
+        // ==================    
 	let transactionPrice = currentLine.slice(0, currentLine.indexOf(" "));
         currentLine = currentLine.replace(transactionPrice + " ", "");
-	console.log(currentLine);
         itemPrice = formatPrice(itemPrice);
 	transactionPrice = formatPrice(transactionPrice);
         
@@ -95,8 +96,8 @@ function lineBuilder(rawSales){
             sku: SKU,
             desc: description,
             quantity: Number(quantity),
-            price: Number(itemPrice),
-	    total: Number(transactionPrice)
+	    price_individual: Number(itemPrice),
+            price: Number(transactionPrice),
         };
         
         lineItems.push(line);
