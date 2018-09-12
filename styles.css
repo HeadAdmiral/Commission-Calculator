@@ -164,3 +164,9 @@ h3 {
 #commission-content {
     padding-left: 15px;
 }
+
+#stats {
+    margin-top: 2rem;
+    height: 20rem;
+    background: red;
+}
