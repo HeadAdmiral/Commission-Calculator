@@ -109,15 +109,23 @@ br {
 
 .bounce {
     position:relative;
-    -webkit-animation:bounce 3s infinite;
+    -webkit-animation:bounce 0.7s infinite;
 }
 
 @-webkit-keyframes bounce {
-    0%       { bottom:0em; }
-    10%      { bottom:0.5em; }
-    20%      { bottom:0px; }
-    30%      { bottom:0.5em; }
-    40%      { bottom:0em; }
+    0%       { top: 0px;
+               box-shadow: 0 6px #17954c;
+             }
+    10%      { top: 1px;
+               box-shadow: 0 5px #17954c;
+             }
+    20%      {}
+    30%      { top: 1px;
+               box-shadow: 0 5px #17954c;
+             }
+    40%      { top: 0px;
+               box-shadow: 0 6px #17954c;
+             }
 }
 
 h3 {
@@ -172,6 +180,6 @@ h3 {
 }
 
 #hourly-wage {
-    bottom: 0.35rem;
+    top: 0.35rem;
     position: relative;
 }
