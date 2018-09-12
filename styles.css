@@ -177,6 +177,7 @@ h3 {
     margin-top: 2rem;
     height: 20rem;
     background: red;
+    display: none;
 }
 
 #hourly-wage {
