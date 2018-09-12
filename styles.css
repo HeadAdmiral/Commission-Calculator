@@ -183,3 +183,7 @@ h3 {
     top: 0.35rem;
     position: relative;
 }
+
+#output-legend {
+    text-shadow: 0 1px 1px #17954c;
+}
