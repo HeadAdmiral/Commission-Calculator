@@ -203,9 +203,12 @@ h3 {
 }
 
 .indent, .category {
-    background-color: #17954c;
     overflow: hidden;
     white-space: nowrap;
+}
+
+td span {
+    background-color: #24b662;
 }
 
 td.category:before {
