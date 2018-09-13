@@ -398,18 +398,36 @@ function processSales(){
     let percentExchanges = toPercent(totalExchanges, totalTransactions);
     let percentService = toPercent(totalService, totalTransactions);
 
-    let salesStatsTotalTransactions = document.getElementById("total-transactions");
+	// ===============
+	// = OUTPUT PAGE =
+	// ===============
 	let salesStatsSalesSubTen = document.getElementById("sales-sub10");
 	let salesStatsSalesSubHundred = document.getElementById("sales-sub100");
 	let salesStatsSalesOverHundred = document.getElementById("sales-over100");
-	let salesStatsSalesTotal = document.getElementById("total-sales");
-	let salesStatsServicePlans = document.getElementById("service-plans");
-	let salesStatsReturns = document.getElementById("returns");
-	let salesStatsExchanges = document.getElementById("exchanges");
 	let salesStatsPercentSubTen = document.getElementById("pct-sales-sub10");
 	let salesStatsPercentSubHundred = document.getElementById("pct-sales-sub100");
 	let salesStatsPercentOverHundred = document.getElementById("pct-sales-over100");
-		
+	let salesStatsSalesTotal = document.getElementById("total-sales");
+	let salesStatsTotalTransactions = document.getElementById("total-transactions");
+	
+	
+	let salesStatsReturns = document.getElementById("returns");
+	let salesStatsExchanges = document.getElementById("exchanges");
+	
+	let salesStatsServicePlans = document.getElementById("service-plans");
+	
+	let salesStatsCommissionUnder10 = document.getElementById("commission-sub10");
+	let salesStatsCommissionUnder100 = document.getElementById("commission-sub100");
+	let salesStatsCommissionOver100 = document.getElementById("commission-over100");
+	let salesStatsCommissionReturns = document.getElementById("commission-returns");
+	let salesStatsCommissionExchanges = document.getElementById("commission-exchanges");
+	let salesStatsCommissionService = document.getElementById("commission-service");
+	let salesStatsBaseHourly = document.getElementById("base-hourly");
+	let salesStatsCommissionPool = document.getElementById("commission-pool");
+	let salesStatsTotalEarnings = document.getElementById("total-earned");
+	let salesStatsHourlyWage = document.getElementById("hourly-wage");
+	
+	
 	salesStatsSalesSubTen.innerText = totalSalesUnderTen;
 	salesStatsSalesSubHundred.innerText = totalSalesUnderHundred;
 	salesStatsSalesOverHundred.innerText = totalSalesOverHundred;
@@ -418,12 +436,21 @@ function processSales(){
 	salesStatsPercentOverHundred.innerText = percentSalesOverHundred;
 	salesStatsSalesTotal.innerText = totalSales;
 	salesStatsTotalTransactions.innerText = totalTransactions;
-	
+
 	salesStatsReturns.innerText = totalReturns;
 	salesStatsExchanges.innerText = totalExchanges;
-	
+
 	salesStatsServicePlans.innerText = totalService;
 	
+	salesStatsCommissionUnder10 = toDollars(commissionUnderTen);
+	salesStatsCommissionUnder100 = toDollars(commissionUnderHundred);
+	salesStatsCommissionOver100 = toDollars(commissionOverHundred);
+	salesStatsCommissionReturns = toDollars(commissionReturns);
+	salesStatsCommissionService = toDollars(commissionService);
+	salesStatsBaseHourly = toDollars(earnedHourly) + " (" + hoursWorked + "hr(s) at $4/hr)"
+	salesStatsCommissionPool = toDollars(commissionPool) + " (" + hoursWorked + "hr(s) at ~$2/hr)"
+	salesStatsTotalEarnings = toDollars(totalEarnedWages);
+	salesStatsHourlyWage = hourlyWage;
 	
 	
 	
