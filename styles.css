@@ -180,7 +180,7 @@ h3 {
     margin-top: 2rem;
     height: 20rem;
     display: none;
-    box-shadow: 0 6px #17954c;
+    box-shadow: none;
 }
 
 #hourly-wage {
