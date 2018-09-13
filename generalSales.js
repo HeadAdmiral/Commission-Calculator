@@ -425,7 +425,7 @@ function processSales(){
 	let salesStatsBaseHourly = document.getElementById("base-hourly");
 	let salesStatsHourlyRate = document.getElementById("hourly-rate");
 	let salesStatsCommissionPool = document.getElementById("com-pool");
-	let salesStatsPoolRate = document.getElementsById("pool-rate");
+	let salesStatsPoolRate = document.getElementById("pool-rate");
 	let salesStatsTotalEarnings = document.getElementById("total-earned");
 	let salesStatsHourlyWage = document.getElementById("hourly-wage");
 		
