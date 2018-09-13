@@ -164,6 +164,7 @@ h3 {
 #details:active {
     box-shadow: 0 4px #17954c;
     top: 2px;
+    animation: step-end;
 }
 
 #details:focus {
