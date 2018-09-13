@@ -105,6 +105,7 @@ br {
 #calculated {
     border: 0.075em solid white;
     box-shadow: 0 6px #17954c;
+    width: 20rem;
 }
 
 .bounce {
