@@ -481,17 +481,24 @@ function toggleOutput(hourlyWage) {
 function showStats(){
     let salesStats = document.getElementById("stats");
     let detailsButton = document.getElementById("details");
-
-    console.log(detailsButton.innerHTML);
-    console.log(detailsButton.innerText);
-    if (salesStats.style.display === "none"){
-	console.log("Changing to block");
+	
+    if (detailsButton.innerText === "＋"){
+        detailsButton.innerText = "−";
 	salesStats.style.display = "block";
-	$("#salesStats").slideDown();
     }
-    else if (salesStats.style.display === "block"){
-    	console.log("Changing to none");
-    	$("#salesStats").slideUp();
+
+    else if (detailsbutton.innerText === "−"){
+	detailsButton.innerText = "＋";
 	salesStats.style.display = "none";
-    }	
+    }
+//     if (salesStats.style.display === "none"){
+// 	console.log("Changing to block");
+// 	salesStats.style.display = "block";
+// 	$("#salesStats").slideDown();
+//     }
+//     else if (salesStats.style.display === "block"){
+//     	console.log("Changing to none");
+//     	$("#salesStats").slideUp();
+// 	salesStats.style.display = "none";
+//     }	
 }
