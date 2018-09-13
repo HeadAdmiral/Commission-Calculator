@@ -481,13 +481,13 @@ function toggleOutput(hourlyWage) {
 function showStats(){
 	let salesStats = document.getElementById("stats");
 	let detailsButton = document.getElementById("details");
-	if (salesStats.style.display == "none"){
-		salesStats.style.display = block;
-		$("#salesStats").slideDown();
+	if (salesStats.style.display === "none"){
+		salesStats.style.display = "block";
+ 		$("#salesStats").slideDown();
 	}
-	else if (salesStats.style.display == "block"){
-		$("#salesStats").slideUp();
-		salesStats.style.display = none;
+	else if (salesStats.style.display === "block"){
+ 		$("#salesStats").slideUp();
+		salesStats.style.display = "none";
 	}	
 	
 }
