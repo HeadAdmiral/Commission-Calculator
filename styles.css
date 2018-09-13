@@ -190,3 +190,16 @@ h3 {
 #output-legend {
     text-shadow: 0 1px 1px #17954c;
 }
+
+.indent {
+    left: 1rem;
+    position: relative;
+}
+
+.amt {
+    float: right;
+}
+
+.category {
+    float: left;
+}
