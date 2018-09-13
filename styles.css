@@ -203,10 +203,18 @@ h3 {
 }
 
 .indent, .category {
+    background-color: #17954c;
     overflow: hidden;
     white-space: nowrap;
 }
 
-.indent:after, .category:after {
-    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·  · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
+td.category:before {
+    clip: rect(0px, 190px, 20px, 0px);
+    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
+    position: absolute;
+    z-index: -1;
 }
+
+/* .indent:after, .category:after {
+    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·  · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
+} */
