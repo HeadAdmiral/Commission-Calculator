@@ -490,8 +490,9 @@ function showStats(){
 
     else if (detailsButton.innerText === "－"){
 	detailsButton.innerText = "＋";
-	$("#salesStats").slideUp();
-	salesStats.style.display = "none";
+	$("#salesStats").slideUp('slow', function(){
+	    salesStats.style.display = "none";
+	});
     }
 //     if (salesStats.style.display === "none"){
 // 	console.log("Changing to block");
