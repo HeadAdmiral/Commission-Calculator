@@ -528,7 +528,8 @@ function toggleOutput(hourlyWage) {
     let input = document.getElementById("form-content");
     let output = document.getElementById("output");
     let commission = document.getElementById("commission");
-     
+    
+    console.log(commission);
     input.style.display = "none";
     commission.innerText = hourlyWage;
     output.style.display = "block";
