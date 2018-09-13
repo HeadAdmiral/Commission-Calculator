@@ -443,7 +443,7 @@ function processSales(){
 	salesStatsServicePlans.innerText = totalService;
 	
 	salesStatsCommissionUnder10.innerText = toDollars(commissionUnderTen);
-// 	salesStatsCommissionUnder100.innerText = toDollars(commissionUnderHundred);
+	salesStatsCommissionUnder100.innerText = toDollars(commissionUnderHundred);
 // 	salesStatsCommissionOver100.innerText = toDollars(commissionOverHundred);
 // 	salesStatsCommissionReturns.innerText = toDollars(commissionReturns);
 // 	salesStatsCommissionService.innerText = toDollars(commissionService);
