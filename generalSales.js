@@ -479,7 +479,6 @@ function toggleOutput(hourlyWage) {
 }
 
 function showStats(){
-	console.log("Showing stats");
 	let salesStats = document.getElementById("stats");
 	let detailsButton = document.getElementById("details");
 	
