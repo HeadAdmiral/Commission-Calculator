@@ -443,14 +443,14 @@ function processSales(){
 	salesStatsServicePlans.innerText = totalService;
 	
 	salesStatsCommissionUnder10.innerText = toDollars(commissionUnderTen);
-	salesStatsCommissionUnder100.innerText = toDollars(commissionUnderHundred);
-	salesStatsCommissionOver100.innerText = toDollars(commissionOverHundred);
-	salesStatsCommissionReturns.innerText = toDollars(commissionReturns);
-	salesStatsCommissionService.innerText = toDollars(commissionService);
-	salesStatsBaseHourly.innerText = toDollars(earnedHourly) + " (" + hoursWorked + "hr(s) at $4/hr)"
-	salesStatsCommissionPool.innerText = toDollars(commissionPool) + " (" + hoursWorked + "hr(s) at ~$2/hr)"
-	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
-	salesStatsHourlyWage.innerText = hourlyWage;
+// 	salesStatsCommissionUnder100.innerText = toDollars(commissionUnderHundred);
+// 	salesStatsCommissionOver100.innerText = toDollars(commissionOverHundred);
+// 	salesStatsCommissionReturns.innerText = toDollars(commissionReturns);
+// 	salesStatsCommissionService.innerText = toDollars(commissionService);
+// 	salesStatsBaseHourly.innerText = toDollars(earnedHourly) + " (" + hoursWorked + "hr(s) at $4/hr)"
+// 	salesStatsCommissionPool.innerText = toDollars(commissionPool) + " (" + hoursWorked + "hr(s) at ~$2/hr)"
+// 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
+// 	salesStatsHourlyWage.innerText = hourlyWage;
 	
 	
 	
