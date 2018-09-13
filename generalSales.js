@@ -448,8 +448,9 @@ function processSales(){
 	salesStatsCommissionService.innerText = toDollars(commissionService);
 	
 	salesStatsBaseHourly.innerHTML = toDollars(earnedHourly)
+	salesStatsCommissionPool.innerHTML = toDollars(commissionPool);
 	$("#base-hourly").append("<span id='hourly-rate'></span>");
-	$(salesStatsCommissionPool).append("<span id='pool-rate'></span>");
+	$("#pool-commission").append("<span id='pool-rate'></span>");
 	
 	let salesStatsHourlyRate = document.getElementById("hourly-rate");
 	let salesStatsPoolRate = document.getElementById("pool-rate");
@@ -459,7 +460,7 @@ function processSales(){
 	salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
 	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at $2/hr)";
 		
-	salesStatsCommissionPool.innerText = toDollars(commissionPool);
+	
 // 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
 // 	salesStatsHourlyWage.innerText = hourlyWage;
 	
