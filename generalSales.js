@@ -406,8 +406,8 @@ function processSales(){
 	let salesStatsReturns = document.getElementById("returns");
 	let salesStatsExchanges = document.getElementById("exchanges");
 	let salesStatsPercentSubTen = document.getElementById("pct-sales-sub10");
-	let salesStatsPercentSubHundred = document.getElementsById("pct-sales-sub100");
-	let salesStatsPercentOverHundred = document.getElementsById("pct-sales-over100");
+	let salesStatsPercentSubHundred = document.getElementById("pct-sales-sub100");
+	let salesStatsPercentOverHundred = document.getElementById("pct-sales-over100");
 	
 	salesStatsTotalTransactions.innerText = totalTransactions;
 	salesStatsSalesSubTen.innerText = totalSalesUnderTen;
