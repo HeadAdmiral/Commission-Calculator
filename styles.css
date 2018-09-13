@@ -199,8 +199,15 @@ h3 {
 
 .amt {
     float: right;
+    right: -2.5rem;
+    position: relative;
 }
 
 .category {
-    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.category:after {
+    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
 }
