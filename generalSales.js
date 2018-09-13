@@ -423,7 +423,7 @@ function processSales(){
 	let salesStatsCommissionExchanges = document.getElementById("com-exchanges");
 	let salesStatsCommissionService = document.getElementById("com-service");
 	let salesStatsBaseHourly = document.getElementById("base-hourly");
-	let salesStatsCommissionPool = document.getElementById("com-pool");
+	let salesStatsCommissionPool = document.getElementById("pool-commission");
 	let salesStatsTotalEarnings = document.getElementById("total-earned");
 	let salesStatsHourlyWage = document.getElementById("hourly-wage");
 	salesStatsSalesSubTen.innerText = totalSalesUnderTen;
