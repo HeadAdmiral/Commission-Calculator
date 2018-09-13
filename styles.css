@@ -158,6 +158,7 @@ h3 {
 #details:hover {
     box-shadow: 0 5px #17954c;
     top: 1px;
+    animation: step-end;
 }
 
 #details:active {
