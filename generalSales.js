@@ -481,11 +481,14 @@ function toggleOutput(hourlyWage) {
 function showStats(){
 	let salesStats = document.getElementById("stats");
 	let detailsButton = document.getElementById("details");
+	
 	if (salesStats.style.display === "none"){
+		console.log("Changing to block");
 		salesStats.style.display = "block";
  		$("#salesStats").slideDown();
 	}
 	else if (salesStats.style.display === "block"){
+		console.log("Changing to none");
  		$("#salesStats").slideUp();
 		salesStats.style.display = "none";
 	}	
