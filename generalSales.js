@@ -485,10 +485,12 @@ function showStats(){
     if (detailsButton.innerText === "＋"){
         detailsButton.innerText = "−";
 	salesStats.style.display = "block";
+	$("#salesStats").slideDown();
     }
 
-    else if (detailsbutton.innerText === "−"){
+    else if (detailsButton.innerText === "−"){
 	detailsButton.innerText = "＋";
+	$("#salesStats").slideUp();
 	salesStats.style.display = "none";
     }
 //     if (salesStats.style.display === "none"){
