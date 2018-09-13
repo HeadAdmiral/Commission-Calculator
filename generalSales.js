@@ -416,14 +416,14 @@ function processSales(){
 	
 	let salesStatsServicePlans = document.getElementById("service-plans");
 	
-	let salesStatsCommissionUnder10 = document.getElementById("commission-sub10");
-	let salesStatsCommissionUnder100 = document.getElementById("commission-sub100");
-	let salesStatsCommissionOver100 = document.getElementById("commission-over100");
-	let salesStatsCommissionReturns = document.getElementById("commission-returns");
-	let salesStatsCommissionExchanges = document.getElementById("commission-exchanges");
-	let salesStatsCommissionService = document.getElementById("commission-service");
+	let salesStatsCommissionUnder10 = document.getElementById("com-sub10");
+	let salesStatsCommissionUnder100 = document.getElementById("com-sub100");
+	let salesStatsCommissionOver100 = document.getElementById("com-over100");
+	let salesStatsCommissionReturns = document.getElementById("com-returns");
+	let salesStatsCommissionExchanges = document.getElementById("com-exchanges");
+	let salesStatsCommissionService = document.getElementById("com-service");
 	let salesStatsBaseHourly = document.getElementById("base-hourly");
-	let salesStatsCommissionPool = document.getElementById("commission-pool");
+	let salesStatsCommissionPool = document.getElementById("com-pool");
 	let salesStatsTotalEarnings = document.getElementById("total-earned");
 	let salesStatsHourlyWage = document.getElementById("hourly-wage");
 	
@@ -442,15 +442,15 @@ function processSales(){
 
 	salesStatsServicePlans.innerText = totalService;
 	
-// 	salesStatsCommissionUnder10.innerText = toDollars(commissionUnderTen);
-// 	salesStatsCommissionUnder100.innerText = toDollars(commissionUnderHundred);
-// 	salesStatsCommissionOver100.innerText = toDollars(commissionOverHundred);
-// 	salesStatsCommissionReturns.innerText = toDollars(commissionReturns);
-// 	salesStatsCommissionService.innerText = toDollars(commissionService);
-// 	salesStatsBaseHourly.innerText = toDollars(earnedHourly) + " (" + hoursWorked + "hr(s) at $4/hr)"
-// 	salesStatsCommissionPool.innerText = toDollars(commissionPool) + " (" + hoursWorked + "hr(s) at ~$2/hr)"
-// 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
-// 	salesStatsHourlyWage.innerText = hourlyWage;
+	salesStatsCommissionUnder10.innerText = toDollars(commissionUnderTen);
+	salesStatsCommissionUnder100.innerText = toDollars(commissionUnderHundred);
+	salesStatsCommissionOver100.innerText = toDollars(commissionOverHundred);
+	salesStatsCommissionReturns.innerText = toDollars(commissionReturns);
+	salesStatsCommissionService.innerText = toDollars(commissionService);
+	salesStatsBaseHourly.innerText = toDollars(earnedHourly) + " (" + hoursWorked + "hr(s) at $4/hr)"
+	salesStatsCommissionPool.innerText = toDollars(commissionPool) + " (" + hoursWorked + "hr(s) at ~$2/hr)"
+	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
+	salesStatsHourlyWage.innerText = hourlyWage;
 	
 	
 	
