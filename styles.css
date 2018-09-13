@@ -178,7 +178,7 @@ h3 {
 
 #stats {
     margin-top: 2rem;
-    height: 20rem;
+    height: 25rem;
     display: none;
     box-shadow: none;
 }
@@ -217,5 +217,5 @@ td span {
     content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
     position: absolute;
     z-index: -1;
-    letter-spacing: 0.245rem;
+    letter-spacing: 0.185rem;
 }
