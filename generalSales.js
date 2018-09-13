@@ -1,14 +1,10 @@
 window.onload = function(){
   let form = document.getElementById("form");
-  let salesStats = document.getElementById("stats");	
 	
   $("form").submit(function (e) {  
     e.preventDefault();
     processSales();
   });	
-	
-  console.log(salesStats.innerText);
-  console.log(salesStats.innerHTML);
 }
 
 function formatPrice(price) {
@@ -393,10 +389,11 @@ function processSales(){
     let totalSalesOverHundred = itemsOverHundred.length;
     let totalReturns = returns.length;
     let totalExchanges = exchanges.length;
+	let totalSales = totalTransactions - totalReturns - totalExchanges;
     let totalService = service.length;
-    let percentSalesUnderTen = toPercent(totalSalesUnderTen, totalTransactions);
-    let percentSalesUnderHundred = toPercent(totalSalesUnderHundred, totalTransactions);
-    let percentSalesOverHundred = toPercent(totalSalesOverHundred, totalTransactions);
+    let percentSalesUnderTen = toPercent(totalSalesUnderTen, totalSales);
+    let percentSalesUnderHundred = toPercent(totalSalesUnderHundred, totalSales);
+    let percentSalesOverHundred = toPercent(totalSalesOverHundred, totalSales);
     let percentReturns = toPercent(totalReturns, totalTransactions);
     let percentExchanges = toPercent(totalExchanges, totalTransactions);
     let percentService = toPercent(totalService, totalTransactions);
@@ -467,7 +464,7 @@ function processSales(){
                     " = " + toDollars(totalEarnedWages));
         console.log(toDollars(totalEarnedWages) + " / " + hoursWorked + "hr(s) worked = " + hourlyWage + "/hr");
     }
-
+	
     toggleOutput(hourlyWage);
 }
 
@@ -488,15 +485,12 @@ function showStats(){
 	
     if (detailsButton.innerText === "＋"){
         detailsButton.innerText = "－";
-	salesStats.style.display = "block";
-	$("#salesStats").slideDown();
+	    salesStats.style.display = "block";
     }
 
     else if (detailsButton.innerText === "－"){
-	detailsButton.innerText = "＋";
-	$("#salesStats").slideUp('slow', function(){
-	    salesStats.style.display = "none";
-	});
+	    detailsButton.innerText = "＋";
+		salesStats.style.display = "none";
     }
 //     if (salesStats.style.display === "none"){
 // 	console.log("Changing to block");
