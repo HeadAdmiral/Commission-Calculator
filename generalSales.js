@@ -423,11 +423,12 @@ function processSales(){
 	let salesStatsCommissionExchanges = document.getElementById("com-exchanges");
 	let salesStatsCommissionService = document.getElementById("com-service");
 	let salesStatsBaseHourly = document.getElementById("base-hourly");
+	let salesStatsHourlyRate = document.getElementById("hourly-rate");
 	let salesStatsCommissionPool = document.getElementById("com-pool");
+	let salesStatsPoolRate = document.getElementsById("pool-rate");
 	let salesStatsTotalEarnings = document.getElementById("total-earned");
 	let salesStatsHourlyWage = document.getElementById("hourly-wage");
-	
-	
+		
 	salesStatsSalesSubTen.innerText = totalSalesUnderTen;
 	salesStatsSalesSubHundred.innerText = totalSalesUnderHundred;
 	salesStatsSalesOverHundred.innerText = totalSalesOverHundred;
@@ -448,8 +449,10 @@ function processSales(){
 	salesStatsCommissionReturns.innerText = toDollars(commissionReturns);
 	salesStatsCommissionExchanges.innerText = toDollars(commissionExchanges);
 	salesStatsCommissionService.innerText = toDollars(commissionService);
-	salesStatsBaseHourly.innerText = toDollars(earnedHourly) + " (" + hoursWorked + "hr(s) at $4/hr)"
-	salesStatsCommissionPool.innerText = toDollars(commissionPool) + " (" + hoursWorked + "hr(s) at ~$2/hr)"
+	salesStatsBaseHourly.innerText = toDollars(earnedHourly);
+	salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
+	salesStatsCommissionPool.innerText = toDollars(commissionPool);
+	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at ~$2/hr)";
 // 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
 // 	salesStatsHourlyWage.innerText = hourlyWage;
 	
