@@ -389,7 +389,7 @@ function processSales(){
     let totalSalesOverHundred = itemsOverHundred.length;
     let totalReturns = returns.length;
     let totalExchanges = exchanges.length;
-	let totalSales = totalTransactions - totalReturns - totalExchanges;
+    let totalSales = totalTransactions - totalReturns - totalExchanges;
     let totalService = service.length;
     let percentSalesUnderTen = toPercent(totalSalesUnderTen, totalSales);
     let percentSalesUnderHundred = toPercent(totalSalesUnderHundred, totalSales);
@@ -402,23 +402,28 @@ function processSales(){
 	let salesStatsSalesSubTen = document.getElementById("sales-sub10");
 	let salesStatsSalesSubHundred = document.getElementById("sales-sub100");
 	let salesStatsSalesOverHundred = document.getElementById("sales-over100");
+	let salesStatsSalesTotal = document.getElementById("total-sales");
 	let salesStatsServicePlans = document.getElementById("service-plans");
 	let salesStatsReturns = document.getElementById("returns");
 	let salesStatsExchanges = document.getElementById("exchanges");
 	let salesStatsPercentSubTen = document.getElementById("pct-sales-sub10");
 	let salesStatsPercentSubHundred = document.getElementById("pct-sales-sub100");
 	let salesStatsPercentOverHundred = document.getElementById("pct-sales-over100");
-	
-	salesStatsTotalTransactions.innerText = totalTransactions;
+		
 	salesStatsSalesSubTen.innerText = totalSalesUnderTen;
 	salesStatsSalesSubHundred.innerText = totalSalesUnderHundred;
 	salesStatsSalesOverHundred.innerText = totalSalesOverHundred;
-	salesStatsServicePlans.innerText = totalService;
-	salesStatsReturns.innerText = totalReturns;
-	salesStatsExchanges.innerText = totalExchanges;
 	salesStatsPercentSubTen.innerText = percentSalesUnderTen;
 	salesStatsPercentSubHundred.innerText = percentSalesUnderHundred;
 	salesStatsPercentOverHundred.innerText = percentSalesOverHundred;
+	salesStatsSalesTotal.innerText = totalSales;
+	salesStatsTotalTransactions.innerText = totalTransactions;
+	
+	salesStatsReturns.innerText = totalReturns;
+	salesStatsExchanges.innerText = totalExchanges;
+	
+	salesStatsServicePlans.innerText = totalService;
+	
 	
 	
 	
@@ -516,14 +521,4 @@ function showStats(){
 	    detailsButton.innerText = "＋";
 		salesStats.style.display = "none";
     }
-//     if (salesStats.style.display === "none"){
-// 	console.log("Changing to block");
-// 	salesStats.style.display = "block";
-// 	$("#salesStats").slideDown();
-//     }
-//     else if (salesStats.style.display === "block"){
-//     	console.log("Changing to none");
-//     	$("#salesStats").slideUp();
-// 	salesStats.style.display = "none";
-//     }	
 }
