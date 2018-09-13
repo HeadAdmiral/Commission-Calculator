@@ -199,7 +199,7 @@ h3 {
 
 .amt {
     float: right;
-    right: -2.5rem;
+    right: -3.25rem;
     position: relative;
     background-color: #24b662;
 }
@@ -218,4 +218,8 @@ td span {
     position: absolute;
     z-index: -1;
     letter-spacing: 0.185rem;
+}
+
+table {
+    font-family: 'Roboto Condensed';
 }
