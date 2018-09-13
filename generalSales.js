@@ -455,7 +455,7 @@ function processSales(){
 	let salesStatsPoolRate = document.getElementById("pool-rate");
 	
 	salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
-	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at ~$2/hr)";
+	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at $2/hr)";
 	
 	
 	salesStatsCommissionPool.innerText = toDollars(commissionPool);
