@@ -483,12 +483,12 @@ function showStats(){
     let detailsButton = document.getElementById("details");
 	
     if (detailsButton.innerText === "＋"){
-        detailsButton.innerText = "−";
+        detailsButton.innerText = "－";
 	salesStats.style.display = "block";
 	$("#salesStats").slideDown();
     }
 
-    else if (detailsButton.innerText === "−"){
+    else if (detailsButton.innerText === "－"){
 	detailsButton.innerText = "＋";
 	$("#salesStats").slideUp();
 	salesStats.style.display = "none";
