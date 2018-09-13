@@ -449,7 +449,7 @@ function processSales(){
 	salesStatsCommissionService.innerText = toDollars(commissionService);
 	//salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
 	salesStatsBaseHourly.innerHTML = toDollars(earnedHourly)
-	$("<span>hello</span>").insertAfter("#base-hourly");
+	$("#base-hourly").append("<span>hello</span>");
 	//salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at ~$2/hr)";
 	salesStatsCommissionPool.innerText = toDollars(commissionPool);
 // 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
