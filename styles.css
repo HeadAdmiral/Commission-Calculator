@@ -199,15 +199,21 @@ h3 {
 
 .amt {
     float: right;
-    right: -2.5rem;
     position: relative;
 }
 
-.category {
+.indent, .category {
     overflow: hidden;
     white-space: nowrap;
 }
 
-.category:after {
-    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
+.category:before {
+    clip: rect(0px, 190px, 20px, 0px);
+    content: " ............................................................ ";
+    position: absolute;
+    z-index: -1;
+}
+
+.indent:after, .category:after {
+    content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
 }
