@@ -398,6 +398,30 @@ function processSales(){
     let percentExchanges = toPercent(totalExchanges, totalTransactions);
     let percentService = toPercent(totalService, totalTransactions);
 
+    let salesStatsTotalTransactions = document.getElementById("total-transactions");
+	let salesStatsSalesSubTen = document.getElementById("sales-sub10");
+	let salesStatsSalesSubHundred = document.getElementById("sales-sub100");
+	let salesStatsSalesOverHundred = document.getElementById("sales-over100");
+	let salesStatsServicePlans = document.getElementById("service-plans");
+	let salesStatsReturns = document.getElementById("returns");
+	let salesStatsExchanges = document.getElementById("exchanges");
+	let salesStatsPercentSubTen = document.getElementById("pct-sales-sub10");
+	let salesStatsPercentSubHundred = document.getElementsById("pct-sales-sub100");
+	let salesStatsPercentOverHundred = document.getElementsById("pct-sales-over100");
+	
+	salesStatsTotalTransactions.innerText = totalTransactions;
+	salesStatsSalesSubTen.innerText = totalSalesUnderTen;
+	salesStatsSalesSubHundred.innerText = totalSalesUnderHundred;
+	salesStatsSalesOverHundred.innerText = totalSalesOverHundred;
+	salesStatsServicePlans.innerText = totalService;
+	salesStatsReturns.innerText = totalReturns;
+	salesStatsExchanges.innerText = totalExchanges;
+	salesStatsPercentSubTen.innerText = percentSalesUnderTen;
+	salesStatsPercentSubHundred.innerText = percentSalesUnderHundred;
+	salesStatsPercentOverHundred.innerText = percentSalesOverHundred;
+	
+	
+	
     // ===============
     // ==== DEBUG ====
     // ===============
