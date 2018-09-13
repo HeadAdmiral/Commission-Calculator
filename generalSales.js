@@ -1,10 +1,14 @@
 window.onload = function(){
-  form = document.getElementById("form");
+  let form = document.getElementById("form");
+  let salesStats = document.getElementById("stats");	
 	
   $("form").submit(function (e) {  
     e.preventDefault();
     processSales();
   });	
+	
+  console.log(salesStats.innerText);
+  console.log(salesStats.innerHTML);
 }
 
 function formatPrice(price) {
