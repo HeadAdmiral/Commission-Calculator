@@ -160,7 +160,7 @@ function getCommission(lineItems){
     for (let i = 0; i < lineItems.length; i++){
         commission += calculateCommission(lineItems[i]);
     }
-    return commission;
+    return formatPrice(commission);
 }
 
 function getItemsUnderTen(lineItems) {
