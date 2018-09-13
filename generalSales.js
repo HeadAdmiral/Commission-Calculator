@@ -159,8 +159,8 @@ function getCommission(lineItems){
     commission = 0;
     for (let i = 0; i < lineItems.length; i++){
         commission += calculateCommission(lineItems[i]);
-    }
-    return formatPrice(commission);
+    }    
+    return commission;
 }
 
 function getItemsUnderTen(lineItems) {
@@ -302,7 +302,7 @@ function toPercent(a, b){
 }
 
 function toDollars(a){
-    return a < 0 ? "-$" + (a * -1).toFixed(2) : '$' + a.toFixed(2);
+    return a < 0 ? "($" + (a * -1).toFixed(2) + ")" : '$' + a.toFixed(2);
 }
 
 function toggleTextBox(){
