@@ -176,8 +176,8 @@ h3 {
 #stats {
     margin-top: 2rem;
     height: 20rem;
-    background: red;
     display: none;
+    box-shadow: 0 6px #17954c;
 }
 
 #hourly-wage {
