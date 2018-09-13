@@ -450,7 +450,7 @@ function processSales(){
 	salesStatsCommissionExchanges.innerText = toDollars(commissionExchanges);
 	salesStatsCommissionService.innerText = toDollars(commissionService);
 	salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
-	salesStatsBaseHourly.innerText = toDollars(earnedHourly);
+	salesStatsBaseHourly.innerHTML = "<td class='amt' id='base-hourly'>"toDollars(earnedHourly)"<span id='hourly-rate'>' (' + hoursWorked + 'hr(s) at $4/hr)'</span></td>";
 	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at ~$2/hr)";
 	salesStatsCommissionPool.innerText = toDollars(commissionPool);
 // 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
