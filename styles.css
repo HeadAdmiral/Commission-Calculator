@@ -222,3 +222,7 @@ td span {
 table {
     font-family: 'Roboto Condensed';
 }
+
+#hourly-rate, #pool-rate {
+    font-size: 50%;   
+}
