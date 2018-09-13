@@ -199,7 +199,9 @@ h3 {
 
 .amt {
     float: right;
+    right: -2.5rem;
     position: relative;
+    background-color: #24b662;
 }
 
 .indent, .category {
@@ -211,11 +213,12 @@ td span {
     background-color: #24b662;
 }
 
-td.category:before {
-    clip: rect(0px, 190px, 20px, 0px);
+.indent:before, .category:before {
+    clip: rect(0px, 250px, 20px, 0px);
     content: " · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · · ";
     position: absolute;
     z-index: -1;
+    letter-spacing: 0.245rem;
 }
 
 /* .indent:after, .category:after {
