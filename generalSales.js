@@ -449,7 +449,7 @@ function processSales(){
 	
 	salesStatsBaseHourly.innerHTML = toDollars(earnedHourly)
 	$("#base-hourly").append("<span id='hourly-rate'></span>");
-	$("#com-pool").append("<span id='pool-rate'></span>");
+	$("#pool-commission").append("<span id='pool-rate'></span>");
 	
 	let salesStatsHourlyRate = document.getElementById("hourly-rate");
 	let salesStatsPoolRate = document.getElementById("pool-rate");
