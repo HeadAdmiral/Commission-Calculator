@@ -477,3 +477,17 @@ function toggleOutput(hourlyWage) {
     output.style.display = "block";
     document.body.style.backgroundColor = "#24b662";
 }
+
+function showStats(){
+	let salesStats = document.getElementById("stats");
+	let detailsButton = document.getElementById("details");
+	if (salesStats.style.display == "none"){
+		salesStats.style.display = block;
+		$("#salesStats").slideDown();
+	}
+	else if (salesStats.style.display == "block"){
+		$("#salesStats").slideUp();
+		salesStats.style.display = none;
+	}	
+	
+}
