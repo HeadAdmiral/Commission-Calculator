@@ -454,10 +454,11 @@ function processSales(){
 	let salesStatsHourlyRate = document.getElementById("hourly-rate");
 	let salesStatsPoolRate = document.getElementById("pool-rate");
 	
+	console.log(salesStatsPoolRate);
+	
 	salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
 	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at $2/hr)";
-	
-	
+		
 	salesStatsCommissionPool.innerText = toDollars(commissionPool);
 // 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
 // 	salesStatsHourlyWage.innerText = hourlyWage;
