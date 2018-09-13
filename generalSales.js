@@ -482,10 +482,8 @@ function showStats(){
     let salesStats = document.getElementById("stats");
     let detailsButton = document.getElementById("details");
 
-    console.log(salesStats.style.display);
-	
-    console.log(salesStats);
-    console.log(detailsButton);
+    console.log(detailsButton.innerHTML);
+    console.log(detailsButton.innerText);
     if (salesStats.style.display === "none"){
 	console.log("Changing to block");
 	salesStats.style.display = "block";
