@@ -205,7 +205,6 @@ h3 {
 }
 
 .indent, .category {
-    overflow: hidden;
     white-space: nowrap;
 }
 
