@@ -378,7 +378,7 @@ function processSales(){
                            commissionExchanges +
                            commissionPool +
                            earnedHourly;
-    let hourlyWage = toDollars(totalEarnedWages / hoursWorked);
+    let hourlyWage = totalEarnedWages / hoursWorked;
 
     // ===============
     // = SALES STATS =
@@ -459,9 +459,7 @@ function processSales(){
 	
 	salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
 	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at $2/hr)";
-	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
-	//salesStatsHourlyWage.innerText = hourlyWage;
-	
+	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);	
 	
 	
     // ===============
