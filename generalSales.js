@@ -425,7 +425,6 @@ function processSales(){
 	let salesStatsBaseHourly = document.getElementById("base-hourly");
 	let salesStatsCommissionPool = document.getElementById("pool-commission");
 	let salesStatsTotalEarnings = document.getElementById("total-earned");
-	let salesStatsHourlyWage = document.getElementById("hourly-wage");
 	salesStatsSalesSubTen.innerText = totalSalesUnderTen;
 	salesStatsSalesSubHundred.innerText = totalSalesUnderHundred;
 	salesStatsSalesOverHundred.innerText = totalSalesOverHundred;
