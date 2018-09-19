@@ -378,7 +378,7 @@ function processSales(){
                            commissionExchanges +
                            commissionPool +
                            earnedHourly;
-    let hourlyWage = totalEarnedWages / hoursWorked;
+    let hourlyWage = toDollars(totalEarnedWages / hoursWorked);
 
     // ===============
     // = SALES STATS =
