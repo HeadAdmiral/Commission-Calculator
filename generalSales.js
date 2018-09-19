@@ -459,10 +459,8 @@ function processSales(){
 	
 	salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
 	salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at $2/hr)";
-		
-	
-// 	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
-// 	salesStatsHourlyWage.innerText = hourlyWage;
+	salesStatsTotalEarnings.innerText = toDollars(totalEarnedWages);
+	salesStatsHourlyWage.innerText = hourlyWage;
 	
 	
 	
