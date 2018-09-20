@@ -162,11 +162,6 @@ function calculateCommission(lineItem, transaction){
         if (isServicePlan(lineItem)) {
             commission = lineItem.price_individual * COMMISSION_SERVICE_PLAN;
         }
-
-        else if (isTV(lineItem)) {
-            commission = lineItem.price_individual * COMMISSION_OUT_OF_DEPARTMENT;
-        }
-
     }
 
     if (lineItem.transactionType === "Sale") {
