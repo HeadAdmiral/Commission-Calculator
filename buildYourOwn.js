@@ -243,7 +243,7 @@ function getMax(transaction){
     let max;
     for (let i = 0; i < transaction.length; i++){
         if (transaction[i].price_individual > max) {
-            max = lineItems[i]
+            max = transaction[i]
         }
     }
 }
