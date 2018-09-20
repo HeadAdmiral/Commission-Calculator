@@ -1,3 +1,8 @@
+comUnderTen = 0;
+comUnderHundred = 0;
+comOverHundred = 0;
+
+
 window.onload = function(){
     let form = document.getElementById("form");
 
@@ -5,7 +10,7 @@ window.onload = function(){
         e.preventDefault();
         processSales();
     });
-}
+};
 
 function formatPrice(price) {
     // If price is negative, change from ($29.99) to -29.99
@@ -106,40 +111,74 @@ function lineBuilder(rawSales){
 }
 
 function calculateCommission(lineItem, transaction){
-    const COMMISSION_HIGHEST_TICKET = 0.015; // 1.5%
-    const COMMISSION_STANDARD = 0.025; // 2.5%
+    const COMMISSION_PRIMARY = 0.015; // 1.5%
+    const COMMISSION_SECONDARY = 0.025; // 2.5%
     const COMMISSION_SERVICE_PLAN = 0.1; // 10%
     let commission = 0;
     let highest_ticket = getMax(transaction);
     let cpu = getCPU(transaction);
 
+    // ===== Primary Items =====
+    // There can be a maximum of two primary items per transaction.
+    // A processor is always a primary item.
+    // Any item that is more expensive than the processor is also a primary item (ex. a GPU)
+    // There can only be two primary items when there is a processor and a more expensive item in the same transaction.
+
+    // ===== Secondary Items =====
+    // Any item that is not the highest priced item on the ticket or a processor is a secondary item.
+
     if (isNotServicePlan(lineItem)) {
 
         if (cpu.length > 0){
             for (let x = 0; x < cpu.length; x++){
-                if (lineItem === cpu[x]){
-                    commission = lineItem.price * COMMISSION_HIGHEST_TICKET;
+
+                if (lineItem.sku === cpu[x].sku){
+                    commission = lineItem.price_individual * COMMISSION_PRIMARY;
+                }
+
+                else if (lineItem.sku === highest_ticket.sku){
+                    commission = lineItem.price_individual * COMMISSION_PRIMARY;
+                }
+
+                else{
+                    commission = lineItem.price * COMMISSION_SECONDARY;
                 }
             }
-        }
-        else if (lineItem === highest_ticket){
-            commission = lineItem.price * COMMISSION_HIGHEST_TICKET;
+
         }
 
-        else{
-            commission = lineItem.price * COMMISSION_STANDARD;
+        else {
+            if (lineItem.sku === highest_ticket.sku){
+                commission = lineItem.price_individual * COMMISSION_PRIMARY;
+            }
+            else{
+                commission = lineItem.price_individual * COMMISSION_SECONDARY;
+            }
         }
+
     }
 
     else {
         if (isServicePlan(lineItem)) {
-            commission = lineItem.price * COMMISSION_SERVICE_PLAN;
+            commission = lineItem.price_individual * COMMISSION_SERVICE_PLAN;
         }
 
         else if (isTV(lineItem)) {
-            commission = lineItem.price * COMMISSION_OUT_OF_DEPARTMENT;
+            commission = lineItem.price_individual * COMMISSION_OUT_OF_DEPARTMENT;
         }
 
+    }
+
+    if (lineItem.transactionType === "Sale") {
+        if (lineItem.price_individual > 0 && lineItem.price_individual < 10) {
+            comUnderTen += commission;
+        }
+        if (lineItem.price_individual > 10 && lineItem.price_individual < 100) {
+            comUnderHundred += commission;
+        }
+        if (lineItem.price_individual > 100) {
+            comOverHundred += commission;
+        }
     }
 
     return commission;
@@ -232,20 +271,31 @@ function getExchanges(lineItems){
 function getCPU(transaction){
     let cpu = [];
 
-    for (let i = 0; i < lineItems.length; i++){
-        if (lineItems[i].desc.indexOf("Boxed Processor") !== -1) {
-            cpu.push(lineItems[i]);
+    for (let i = 0; i < transaction.length; i++){
+        if (transaction[i].desc.indexOf("Boxed Processor") !== -1) {
+            cpu.push(transaction[i]);
         }
     }
+    return cpu;
 }
 
 function getMax(transaction){
-    let max;
+    let max = 0;
+
     for (let i = 0; i < transaction.length; i++){
-        if (transaction[i].price_individual > max) {
-            max = transaction[i]
+        if (max === 0){
+            max = transaction[i];
         }
+
+        else{
+            if (transaction[i].price_individual > max.price_individual) {
+                max = transaction[i];
+            }
+        }
+
     }
+
+    return max;
 }
 
 function getTransaction(lineItems, transactionID){
@@ -255,6 +305,7 @@ function getTransaction(lineItems, transactionID){
             transaction.push(lineItems[i]);
         }
     }
+    return transaction
 }
 
 function isUnderTen(lineItem){
@@ -381,9 +432,10 @@ function processSales(){
     // ===============
     // ==== $$$$$ ====
     // ===============
-    let commissionUnderTen = getCommission(itemsUnderTen);
-    let commissionUnderHundred = getCommission(itemsUnderHundred);
-    let commissionOverHundred = getCommission(itemsOverHundred);
+    let commission = getCommission(lineItems);
+    let commissionUnderTen = comUnderTen;
+    let commissionUnderHundred = comUnderHundred;
+    let commissionOverHundred = comOverHundred;
     let commissionService = getCommission(service);
     let commissionReturns = getCommission(returns);
     let commissionExchanges = getCommission(exchanges);
@@ -472,8 +524,6 @@ function processSales(){
 
     let salesStatsHourlyRate = document.getElementById("hourly-rate");
     let salesStatsPoolRate = document.getElementById("pool-rate");
-
-    console.log(salesStatsPoolRate);
 
     salesStatsHourlyRate.innerText = " (" + hoursWorked + "hr(s) at $4/hr)";
     salesStatsPoolRate.innerText = " (" + hoursWorked + "hr(s) at $2/hr)";
