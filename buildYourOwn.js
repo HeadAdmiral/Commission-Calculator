@@ -241,8 +241,8 @@ function getCPU(transaction){
 
 function getMax(transaction){
     let max;
-    for (let i = 0; i < lineItems.length; i++){
-        if (lineItems[i].price_individual > max) {
+    for (let i = 0; i < transaction.length; i++){
+        if (transaction[i].price_individual > max) {
             max = lineItems[i]
         }
     }
