@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Commission Calculator | General Sales</title>
+    <title>Commission Calculator | Systems</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -24,6 +24,8 @@
                     <input type="checkbox" name="lunched" onchange="toggleTextBox()"><br>
                 Length of Lunch (in minutes):
                     <input type="number" name="lunchlength" step="1" min="1" disabled="disabled" id="lunchlength" autocomplete="off" placeholder="e.g. 30 minutes" required><br>
+                Commission Rate (%):
+                    <input type="number" name="commission-rate" step=0.005 min="0.005" autocomplete="off" placeholder="e.g. 0.0175%" required><br>
                 Sales Information: 
                     <input type="text" name="sales" autocomplete="off" required><br><br>
                     <button id="submit" type="submit">➟</button>
