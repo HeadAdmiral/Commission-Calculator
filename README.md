@@ -24,7 +24,12 @@ In General Sales, commission is calculated on a per-item basis. The commission r
 
 
 ## Build Your Own
-*Not yet implemented*
+
+In Build Your Own, commission is calculated on a transaction-wide basis. Products are put into two categories: primary and secondary. If a transaction has a processor, the processor is automatically considered a primary item. The highest priced product with a price higher than the processor also becomes a primary item, if it exists. If a transaction doesn't have a processor on it, the highest priced item on the ticket becomes the primary item. All other items are considered secondary.
+
+  * Primary items: 1.5% commission
+  * Secondary items: 2.5% commission
 
 ## Systems
-*Not yet implemented*
+
+In Systems, commission is a flat-percentage for all items. The rate is calculated based on a rolling eight week basis, which takes into consideration margin of items sold and attachment rate, among other factors. Therefore each item on a transaction is multiplied by the same flat commission rate.
