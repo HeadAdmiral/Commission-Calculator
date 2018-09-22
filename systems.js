@@ -82,12 +82,13 @@ function lineBuilder(rawSales){
         // ==================
 
         let itemPrice;
-        if (description.indexOf("can be attached to" !== -1)) {
+        if (description.indexOf("can be attached to") !== -1) {
+            console.log("true");
             // If a Dell Plan is in the sales information, it throws this function off due to having '$' in the description.
-            
+
             description = quantity; // Fix the description
             quantity = currentLine.slice(0, currentLine.indexOf("\t")); // Fix the quantity
-            
+
             currentLine = currentLine.replace(quantity + "\t", "");
             itemPrice = currentLine.slice(0, currentLine.indexOf("\t"));
             currentLine = currentLine.replace(itemPrice + "\t", "");
@@ -101,22 +102,10 @@ function lineBuilder(rawSales){
         // ==================
         //        TOTAL
         // ==================
-        let transactionPrice;
-        if (transactionType === "Sale") {
-            transactionPrice = currentLine.slice(0, currentLine.indexOf(" "));
-            currentLine = currentLine.replace(transactionPrice + " ", "");
-            itemPrice = formatPrice(itemPrice);
-            transactionPrice = formatPrice(transactionPrice);
-        }
-
-        else if (transactionType === "Exchange" || transactionType === "Return"){
-            transactionPrice = currentLine.slice(0, currentLine.indexOf("\t"));
-            currentLine = currentLine.replace(transactionPrice + "\t", "");
-            transactionPrice = currentLine.slice(0, currentLine.indexOf("\t"));
-            currentLine = currentLine.replace(transactionPrice + "\t", "");
-            itemPrice = formatPrice(itemPrice);
-            transactionPrice = formatPrice(transactionPrice);
-        }
+        let transactionPrice = currentLine.slice(0, currentLine.indexOf(" "));
+        currentLine = currentLine.replace(transactionPrice + " ", "");
+        itemPrice = formatPrice(itemPrice);
+        transactionPrice = formatPrice(transactionPrice);
 
         let line = {
             transactionID: transactionID,
@@ -124,9 +113,9 @@ function lineBuilder(rawSales){
             lineNumber: Number(lineNumber),
             sku: SKU,
             desc: description,
-            quantity: quantity,
-            price_individual: itemPrice,
-            price: transactionPrice,
+            quantity: Number(quantity),
+            price_individual: Number(itemPrice),
+            price: Number(transactionPrice),
         };
 
         lineItems.push(line);
@@ -253,7 +242,8 @@ function isNotServicePlan(lineItem){
         lineItem.desc.indexOf("replacement plan") === -1 &&
         lineItem.desc.indexOf("Protection Plan") === -1 &&
         lineItem.desc.indexOf("protection plan") === -1 &&
-        lineItem.desc.indexOf("Dell Accidental Damage") === -1;
+        lineItem.desc.indexOf("Dell Accidental Damage") === -1 &&
+        lineItem.desc.indexOf("REPAIR/REPLA") === -1;
 }
 
 function isServicePlan(lineItem){
